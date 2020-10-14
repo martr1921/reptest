@@ -1,0 +1,41 @@
+{
+	"name": "copy2test_linkedservice",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "copy2test_linked",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@concat('export_' , formatDateTime(utcnow(), 'ss')  ,  '.txt' )",
+					"type": "Expression"
+				},
+				"container": "mtcontainer1921"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
