@@ -99,12 +99,8 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "copy2_source",
-						"type": "DatasetReference",
-						"parameters": {
-							"schema_name": "dbo",
-							"table_name": "Sales"
-						}
+						"referenceName": "ds_cp_2_source",
+						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
