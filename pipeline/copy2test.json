@@ -1,9 +1,9 @@
 {
-    "name": "copy2test",
+    "name": "copy2test1",
     "properties": {
         "activities": [
             {
-                "name": "Copy2test",
+                "name": "Copy2test1",
                 "type": "Copy",
                 "dependsOn": [],
                 "policy": {
