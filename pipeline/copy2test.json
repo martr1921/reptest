@@ -26,15 +26,7 @@
 						"partitionOption": "None"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
-						"storeSettings": {
-							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
-						}
+						"type": "AzureSqlSink"
 					},
 					"enableStaging": false,
 					"validateDataConsistency": false,
@@ -48,9 +40,9 @@
 									"physicalType": "nchar"
 								},
 								"sink": {
+									"name": "First",
 									"type": "String",
-									"physicalType": "nchar",
-									"ordinal": 1
+									"physicalType": "nchar"
 								}
 							},
 							{
@@ -60,9 +52,9 @@
 									"physicalType": "nchar"
 								},
 								"sink": {
+									"name": "Last",
 									"type": "String",
-									"physicalType": "nchar",
-									"ordinal": 2
+									"physicalType": "nchar"
 								}
 							},
 							{
@@ -72,9 +64,9 @@
 									"physicalType": "date"
 								},
 								"sink": {
+									"name": "DOB",
 									"type": "Date",
-									"physicalType": "date",
-									"ordinal": 3
+									"physicalType": "date"
 								}
 							},
 							{
@@ -84,9 +76,9 @@
 									"physicalType": "datetime"
 								},
 								"sink": {
+									"name": "LastModified",
 									"type": "DateTime",
-									"physicalType": "datetime",
-									"ordinal": 4
+									"physicalType": "datetime"
 								}
 							}
 						],
@@ -109,8 +101,12 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "copy2test_linkedservice",
-						"type": "DatasetReference"
+						"referenceName": "copy2_source",
+						"type": "DatasetReference",
+						"parameters": {
+							"schema_name": "dbo",
+							"table_name": "Sales"
+						}
 					}
 				]
 			}
