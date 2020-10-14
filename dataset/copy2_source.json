@@ -1,0 +1,12 @@
+{
+	"name": "copy2_source",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "linkedserviceForSQLdatabase",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
